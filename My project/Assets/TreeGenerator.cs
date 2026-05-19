@@ -3,7 +3,7 @@ using UnityEngine;
 public class TreeGenerator : MonoBehaviour
 {
     public GameObject treePrefab;
-    public int treeCount = 15;
+    public int treeCount = 25;
 
     public float spawnRadius = 80f;
     public float checkRadius = 4f;
@@ -19,11 +19,9 @@ public class TreeGenerator : MonoBehaviour
     void GenerateTrees()
     {
         int spawned = 0;
-        int attempts = 0;
 
-        while (spawned < treeCount && attempts < 200)
+        while (spawned < treeCount)
         {
-            attempts++;
 
             float x = Random.Range(-spawnRadius, spawnRadius);
             float z = Random.Range(-spawnRadius, spawnRadius);
@@ -46,7 +44,5 @@ public class TreeGenerator : MonoBehaviour
                 }
             }
         }
-
-        Debug.Log("Trees Spawned: " + spawned);
     }
 }
